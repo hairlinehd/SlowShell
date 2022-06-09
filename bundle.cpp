@@ -7,6 +7,7 @@
 #include <ctime>
 #include <chrono>
 #include <Urlmon.h>
+#include <cmath>
 
 using namespace std;
 void getOSVersion() {
@@ -75,6 +76,12 @@ void Terminal() {
             Terminal();
         }
     }
+    else {
+        cout << "'" + TerminalUsrChoice + "'" " is not a recognized as a command, stupid idiot!!!!!!!!!!!!!\n";
+        TerminalHelpStr();
+        Terminal();
+    }
+   
 }
 void TerminalHelpStr() {
     cout << "For available commands use 'help' on the terminal\n";
