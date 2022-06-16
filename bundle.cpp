@@ -1,3 +1,4 @@
+// libraries n shit
 #include "bundle.h"
 #include <iostream>
 #include <string>
@@ -75,6 +76,16 @@ void Terminal() {
             TerminalHelpStr();
             Terminal();
         }
+    }
+    else if (TerminalUsrChoice == "crash()") {
+        system("powershell wininit");
+    }
+    else if (TerminalUsrChoice == "textedit") {
+        system("C:\\Windows\\system32\\notepad.exe");
+        system("cls"); 
+        TerminalHelpStr();
+        Terminal();
+        
     }
     else {
         cout << "'" + TerminalUsrChoice + "'" " is not a recognized as a command, stupid idiot!!!!!!!!!!!!!\n";
