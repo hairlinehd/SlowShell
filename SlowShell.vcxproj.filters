@@ -20,9 +20,15 @@
     <ClCompile Include="bundle.cpp">
       <Filter>Header</Filter>
     </ClCompile>
+    <ClCompile Include="window.cpp">
+      <Filter>Header</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bundle.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="window.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

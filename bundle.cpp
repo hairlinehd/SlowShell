@@ -9,8 +9,26 @@
 #include <chrono>
 #include <Urlmon.h>
 #include <cmath>
-
+#include <sys/types.h>
+#include <dirent.h>
+namespace fs = std::filesystem;
 using namespace std;
+void getCurrentDirItems() {
+    Sleep(2009);
+    DIR* dr;
+    struct dirent* en;
+    dr = opendir(".");
+    if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+            cout << " \n" << en->d_name;
+        }
+        closedir(dr);
+    }
+}
+void TerminalDefaultPage() {
+    TerminalHelpStr();
+    Terminal();
+}
 void getOSVersion() {
     OSVERSIONINFOEX info;
     ZeroMemory(&info, sizeof(OSVERSIONINFOEX));
@@ -86,6 +104,12 @@ void Terminal() {
         TerminalHelpStr();
         Terminal();
         
+    }
+    else if (TerminalUsrChoice == "ls") {
+        getCurrentDirItems();
+        cout << "\n\n";
+        TerminalDefaultPage();
+
     }
     else {
         cout << "'" + TerminalUsrChoice + "'" " is not a recognized as a command, stupid idiot!!!!!!!!!!!!!\n";
